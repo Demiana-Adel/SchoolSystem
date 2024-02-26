@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SchoolSystem1.View_Model.CourseVM>
+
+@{
+    ViewBag.Title = "AllCouses";
+}
+
+<h2>AllCouses</h2>
+
+
+    <a href="~/Course/AddCourse" class="btn btn-info ">New Course</a>
+<br />
+<br />
+<table class=" table table-bordered table-hover table-responsive ">
+
+
+
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+       
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID </td>
+            <td>@item.Name</td>
+          
+            <td>
+                <a href="~/Course/Details/@item.ID" class="btn btn-success">Details</a>
+            </td>
+            <td>
+
+                <a href="~/Course/Edit/@item.ID" class="btn btn-primary">Edit</a>
+            </td>
+            <td>
+
+
+                <a href="~/Course/Delete/@item.ID" class="btn btn-danger ">Delete</a>
+            </td>
+          
+        </tr>
+    }
+
+</table>

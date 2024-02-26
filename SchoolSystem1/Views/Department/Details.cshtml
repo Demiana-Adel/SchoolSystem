@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SchoolSystem1.ViewModel.DepartmentVM>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+
+
+    <table class="table table-bordered table-hover table-responsive ">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Manager</td>
+            <td>Image</td>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.ID   </td>
+                <td>@item.Name  </td>
+                <td>@item.Manager  </td>
+                <td><a href="~/img/@item.ManagerImg"><img src="~/img/@item.ManagerImg  " style=" width:85px ; height:85px" target="_blank" /></a></td>
+                <td>
+                    <a href="~/Department/ViewCourses/@item.ID" class="btn btn-info ">ViewCourses</a>
+                </td>
+                <td>
+                    <a href="~/Department/ViewStudents/@item.ID" class="btn btn-warning ">ViewStudents</a>
+                </td>
+                <td>
+                    <a href="~/Department/ViewProf/@item.ID" class="btn btn-success ">ViewProf</a>
+                </td>
+
+            </tr>
+        }
+
+
+
+
+    </table>
+</div>

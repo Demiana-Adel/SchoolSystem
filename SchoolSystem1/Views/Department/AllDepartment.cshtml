@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SchoolSystem1.ViewModel.DepartmentVM>
+
+@{
+    ViewBag.Title = "AllDepartment";
+    
+
+}
+
+<h2>AllDepartment</h2>
+
+
+
+<a href="~/Department/AddDepartment" class="btn btn-info ">New Department</a>
+<br />
+<br />
+<div>
+    <h4>DepartmentVM</h4>
+    <hr />
+    @using (Html.BeginForm("AllDepartment", "Department"))
+    {
+        <table class=" table table-bordered table-hover table-responsive">
+
+            <tr>
+                <td>ID </td>
+                <td>Name </td>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.ID </td>
+                    <td>@item.Name </td>
+
+                    <td>
+                        <a href="~/Department/Details/@item.ID" class="btn btn-success">Details</a>
+                    </td>
+                    <td>
+
+                        <a href="~/Department/Edit/@item.ID" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+
+
+                        <a href="~/Department/Delete/@item.ID" class="btn btn-danger ">Delete</a>
+                    </td>
+
+                </tr>
+                
+            }
+
+        </table>
+    }
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SchoolSystem1.View_Model.UserVM>
+
+@{
+    ViewBag.Title = "AllProf";
+    var i = 1;
+}
+
+<h2>AllProf</h2>
+
+<a href="~/Prof/AddProf" class="btn btn-info ">New Prof</a>
+<div>
+    <h4>UserVM</h4>
+    <hr />
+    @using (Html.BeginForm("AllProf", "Prof"))
+    {
+
+        <table class=" table table-bordered table-hover table-responsive">
+            <tr>
+                <td>ID </td>
+                <td>FirstName </td>
+                <td>LasstName  </td>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+
+                        @i
+
+                    </td>
+
+                    <td>@item.FirstName </td>
+                    <td>@item.LasstName</td>
+
+                    <td>
+                        <a href="~/Prof/Deatails/@item.ID " class="btn btn-success">Details</a>
+                    </td>
+                    <td>
+
+                        <a href="~/Prof/Edit/@item.ID" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+
+
+                        <a href="~/Prof/Delete/@item.ID" class="btn btn-danger ">Delete</a>
+                    </td>
+
+                </tr>
+
+
+                i++;
+
+
+            }
+
+        </table>
+    }
+
+
+
+</div>

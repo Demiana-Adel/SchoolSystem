@@ -1,0 +1,45 @@
+﻿@model List<SchoolSystem1.View_Model.UserVM>
+@{
+    ViewBag.Title = "Deatails";
+
+}
+
+<h2>Details</h2>
+<div>
+    <table class="table table-bordered table-hover table-responsive ">
+
+        <tr>
+            @*<td>ID</td>*@
+            <td>FirstName</td>
+            <td>lastName</td>
+            <td>Age</td>
+            <td>Address</td>
+            <td>Phone</td>
+            <td>UserName</td>
+           <td>Email</td>
+            <td>Department</td>
+            <td>Image</td>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>@item.ID</td>*@
+                <td>@item.FirstName</td>
+                <td>@item.LasstName</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.DepartmentID</td>
+                <td><a href="~/img/@item.Img"><img src="~/img/@item.Img" style=" width:85px ; height:85px" target="_blank" /></a></td>
+                <td>
+
+
+                    <a href="~/Student/ViewCourses/@item.ID" class="btn btn-info ">ViewCourses</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
